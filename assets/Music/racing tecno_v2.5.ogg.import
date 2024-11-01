@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ccoknof3w58q3"
+path="res://.godot/imported/racing tecno_v2.5.ogg-c201d0c6ce11f0e2ee812e2bf7ddc22c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Music/racing tecno_v2.5.ogg"
+dest_files=["res://.godot/imported/racing tecno_v2.5.ogg-c201d0c6ce11f0e2ee812e2bf7ddc22c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

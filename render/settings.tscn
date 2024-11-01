@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf2srtpjtpvdm"]
+
+[ext_resource type="Script" path="res://render/settings.gd" id="1_2bbl3"]
+[ext_resource type="PackedScene" uid="uid://px6a2dg8cawb" path="res://addons/modular-settings-menu/scenes/settings.tscn" id="2_p25sy"]
+
+[node name="Settings" type="CanvasLayer"]
+script = ExtResource("1_2bbl3")
+
+[node name="Settings" parent="." node_paths=PackedStringArray("MenuPanelRef") instance=ExtResource("2_p25sy")]
+MenuPanelRef = NodePath("..")
+
+[node name="ColorRect" type="ColorRect" parent="Settings"]
+z_index = -1
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.254902)

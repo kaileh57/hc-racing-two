@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://0i8jbqx7mffx"
+path="res://.godot/imported/Car Engine.wav-1633242f0885a454ded0bf25c3c9c2f9.sample"
+
+[deps]
+
+source_file="res://assets/SFX/Car Engine.wav"
+dest_files=["res://.godot/imported/Car Engine.wav-1633242f0885a454ded0bf25c3c9c2f9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

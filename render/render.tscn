@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://crbkq0wqgjw8h"]
+
+[ext_resource type="Script" path="res://render/render.gd" id="1_m8uky"]
+[ext_resource type="Environment" uid="uid://bxtfvswguujhr" path="res://render/render.tres" id="2_or5fa"]
+[ext_resource type="PackedScene" uid="uid://px6a2dg8cawb" path="res://addons/modular-settings-menu/scenes/settings.tscn" id="3_vhedv"]
+[ext_resource type="Script" path="res://addons/modular-settings-menu/scripts/settings-handler-scripts/world_env_settings_handler.gd" id="4_5clwc"]
+[ext_resource type="Script" path="res://addons/modular-settings-menu/scripts/settings-handler-scripts/camera_settings_handler.gd" id="5_81biq"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jy64v"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_cnv48"]
+
+[node name="Render" type="Node"]
+script = ExtResource("1_m8uky")
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Settings" parent="Menu" node_paths=PackedStringArray("MenuPanelRef") instance=ExtResource("3_vhedv")]
+layout_mode = 1
+MenuPanelRef = NodePath("..")
+
+[node name="Env" type="Node" parent="Menu/Settings" node_paths=PackedStringArray("WorldEnvRef")]
+script = ExtResource("4_5clwc")
+WorldEnvRef = NodePath("../../../WorldEnvironment")
+
+[node name="Cam" type="Node" parent="Menu/Settings" node_paths=PackedStringArray("CameraRef")]
+script = ExtResource("5_81biq")
+CameraRef = NodePath("../../../WorldEnvironment/Camera3D")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_or5fa")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="WorldEnvironment"]
+mesh = SubResource("CapsuleMesh_jy64v")
+
+[node name="Camera3D" type="Camera3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.58733)
+attributes = SubResource("CameraAttributesPractical_cnv48")
